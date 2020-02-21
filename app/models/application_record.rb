@@ -1,3 +1,6 @@
 class ApplicationRecord < ActiveRecord::Base
-  self.abstract_class = true
+    validates :name, presence: true, uniqueness: true
+
+   has_many :doses
+    self.abstract_class = true
 end
